@@ -79,6 +79,6 @@ class Student
     sql = <<-SQL
     SELECT name FROM students WHERE grade = 10 LIMIT x
     SQL
-    DB[:conn]execute(sql)
+    DB[:conn].execute(sql)
   end
 end
