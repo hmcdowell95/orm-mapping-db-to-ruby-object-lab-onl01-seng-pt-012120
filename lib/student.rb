@@ -76,11 +76,13 @@ class Student
   end
   
   def self.first_X_students_in_grade_10(x)
+    
+  end
+  
+  def self.first_student_in_grade_10
     sql = <<-SQL
-    SELECT name FROM students WHERE grade = 10
+    SELECT name FROM students WHERE grade = 10 LIMIT 1
     SQL
-    a = DB[:conn].execute(sql)
-    b = x - 1
-    a[0..b]
+    DB[:conn].execute(sql)
   end
 end
