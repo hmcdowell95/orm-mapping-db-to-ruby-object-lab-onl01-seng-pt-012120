@@ -73,6 +73,6 @@ class Student
     SELECT name FROM students WHERE grade < 12
     SQL
     a = DB[:conn].execute(sql)
-    a.
+    a.join
   end
 end
