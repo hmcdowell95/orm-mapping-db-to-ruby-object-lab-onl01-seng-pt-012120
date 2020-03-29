@@ -1,4 +1,4 @@
-require pry
+require 'pry'
 class Student
   attr_accessor :id, :name, :grade
 
@@ -72,6 +72,7 @@ class Student
     sql = <<-SQL
     SELECT name FROM students WHERE grade < 12
     SQL
+    binding.pry
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
