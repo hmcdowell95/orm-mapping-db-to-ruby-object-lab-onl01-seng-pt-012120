@@ -81,6 +81,6 @@ class Student
     SQL
     a = DB[:conn].execute(sql)
     b = x - 1
-    a[0..x]
+    a[0..b]
   end
 end
