@@ -48,7 +48,7 @@ class Student
     CREATE TABLE IF NOT EXISTS students (
       id INTEGER PRIMARY KEY,
       name TEXT,
-      grade TEXT
+      grade INTEGER
     )
     SQL
 
@@ -69,7 +69,7 @@ class Student
   
   def self.students_below_12th_grade
     sql = <<-SQL
-    SELECT name FROM students WHERE grade = 10
+    SELECT name FROM students WHERE grade < 12
     SQL
     DB[:conn].execute(sql)
   end
